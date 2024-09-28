@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import logo from "../../src/assets/logo-cocina.jpg"
+import logo from "../../../src/assets/logo-cocina.jpg"
 function Menu() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
