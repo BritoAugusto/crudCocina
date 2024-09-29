@@ -1,24 +1,27 @@
-import './App.css'
-import Footer from './components/commons/Footer.jsx';
-import Inicio from './components/pages/Inicio.jsx';
-import Menu from './components/commons/Menu.jsx'
+import "./App.css";
+import Footer from "./components/commons/Footer.jsx";
+import Inicio from "./components/pages/Inicio.jsx";
+import Menu from "./components/commons/Menu.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
-import CardReceta from './components/recetas/CardReceta.jsx';
-
+import CardReceta from "./components/recetas/CardReceta.jsx";
+import { Row } from "react-bootstrap";
 
 function App() {
-
   return (
     <>
-    <Menu></Menu>
+      <Menu></Menu>
       <main className="sectionMain">
         <Inicio></Inicio>
-        <CardReceta></CardReceta>
-        <CardReceta></CardReceta>
+        <Row>
+          <CardReceta></CardReceta>
+          <CardReceta></CardReceta>
+          <CardReceta></CardReceta>
+          <CardReceta></CardReceta>
+        </Row>
       </main>
       <Footer></Footer>
     </>
   );
 }
 
-export default App
+export default App;
