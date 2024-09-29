@@ -5,19 +5,22 @@ import Menu from "./components/commons/Menu.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CardReceta from "./components/recetas/CardReceta.jsx";
 import { Row } from "react-bootstrap";
+import Administrador from "./components/pages/Administrador.jsx";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
   return (
     <>
       <Menu></Menu>
       <main className="sectionMain">
-        <Inicio></Inicio>
-        <Row>
+        {/* <Inicio></Inicio> */}
+        {/* <Row>
           <CardReceta></CardReceta>
           <CardReceta></CardReceta>
           <CardReceta></CardReceta>
           <CardReceta></CardReceta>
-        </Row>
+        </Row> */}
+        <Administrador></Administrador>
       </main>
       <Footer></Footer>
     </>
