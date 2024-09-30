@@ -1,4 +1,5 @@
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
+import CardReceta from "../recetas/CardReceta";
 
 const Inicio = () => {
   return (
@@ -12,7 +13,12 @@ const Inicio = () => {
         Recetas Deliciosas
         </h2>
         <Container>
-            
+          <Row>
+            <CardReceta></CardReceta>
+            <CardReceta></CardReceta>
+            <CardReceta></CardReceta>
+            <CardReceta></CardReceta>
+          </Row>
         </Container>
     </>
   );

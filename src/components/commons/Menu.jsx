@@ -19,6 +19,7 @@ function Menu() {
           <Nav className="ms-auto">
             <Nav.Link className="nav-link">Inicio</Nav.Link>
             <Nav.Link className="nav-link">Administrador</Nav.Link>
+            <Nav.Link className="nav-link">Login</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

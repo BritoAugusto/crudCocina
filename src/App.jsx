@@ -10,25 +10,43 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Error404 from "./components/pages/Error404.jsx";
 import DetalleReceta from "./components/pages/DetalleReceta.jsx";
 import FormularioReceta from "./components/recetas/FormularioReceta.jsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Menu></Menu>
-      <main className="sectionMain">
-        {/* <Inicio></Inicio> */}
-         {/* <Row> */}
+      <BrowserRouter>
+        <Menu></Menu>
+        <main className="sectionMain">
+          <Routes>
+            <Route exact path="/" element={<Inicio></Inicio>}></Route>
+            <Route
+              exact
+              path="/administrador"
+              element={<Administrador></Administrador>}
+            ></Route>
+            <Route
+              exact
+              path="/administrador/crear"
+              element={<FormularioReceta></FormularioReceta>}
+            ></Route>
+            <Route
+              exact
+              path="/administrador/editar"
+              element={<FormularioReceta></FormularioReceta>}
+            ></Route>
+            <Route path="*" element={<Error404></Error404>}></Route>
+          </Routes>
+          {/* <Row> */}
           {/* <CardReceta></CardReceta>
           <CardReceta></CardReceta>
           <CardReceta></CardReceta>
           <CardReceta></CardReceta> */}
-        {/* <DetalleReceta></DetalleReceta> */}
-        {/* </Row>  */}
-        {/* <Admi<nistrador></Administrador> */}
-        <FormularioReceta></FormularioReceta>
-        {/* <Error404></Error404> */}
-      </main>
-      <Footer></Footer>
+          {/* <DetalleReceta></DetalleReceta> */}
+          {/* </Row>  */}
+        </main>
+        <Footer></Footer>
+      </BrowserRouter>
     </>
   );
 }
