@@ -13,6 +13,7 @@ const FormularioReceta = () => {
 
   const onSubmit = ()=>{
     console.log('desde onsubmit')
+    reset();
   }
 
   return (
