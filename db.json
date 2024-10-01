@@ -74,6 +74,14 @@
       "ingredientes": "1kg de papas",
       "preparacion": "fritar papas",
       "id": "Jz3VzOa"
+    },
+    {
+      "nombreReceta": "Empanadas de Carne y Pollo",
+      "imagen": "https://images.pexels.com/photos/5881018/pexels-photo-5881018.jpeg",
+      "categoria": "Salado",
+      "ingredientes": "Carne Picada",
+      "preparacion": "Carne picada",
+      "id": "bVBhrZw"
     }
   ]
 }

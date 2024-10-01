@@ -1,18 +1,18 @@
 import { Button } from "react-bootstrap";
 
-const ItemReceta = () => {
+const ItemReceta = ({receta, setListaReceta, fila}) => {
   return (
     <tr>
-      <td className="text-center">1</td>
-      <td>Ratatoille</td>
+      <td className="text-center">{fila}</td>
+      <td>{receta.nombreReceta}</td>
       <td className="text-center">
         <img
-          src="https://media.istockphoto.com/id/1446212074/es/foto/pisto-en-capas-en-una-fuente-para-hornear-rodajas-de-calabac%C3%ADn-pimiento-rojo-chile-calabaza.jpg?s=1024x1024&w=is&k=20&c=AWVT9Ct6uJ1PQc5QbelB2cw3rRF7yHLtBQOs6GpsnK4="
-          alt="nombre receta"
+          src={receta.imagen}
+          alt={receta.nombreReceta}
           className="img-item"
         />
       </td>
-      <td>Salado</td>
+      <td>{receta.categoria}</td>
       <td className="text-center">
         <Button className="me-md-2 me-lg-2">
           <i className="bi bi-pencil-square"></i>
