@@ -1,6 +1,6 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearRecetaAPI } from "../../helpers/queries";
+import { buscarRecetaAPI, crearRecetaAPI } from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -22,8 +22,14 @@ if (!creandoReceta) {
 }
 },[])  
 
-const cargarReceta = ()=>{
-  
+const cargarReceta = async()=>{
+  const respuesta = await buscarRecetaAPI(id)
+  if (respuesta.status === 200) {
+    const recetaEncontrada = await respuesta.json()
+    console.log(recetaEncontrada)
+  }else{
+
+  }
 }
 
   const onSubmit =  async(receta)=>{
