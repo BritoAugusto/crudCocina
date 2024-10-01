@@ -1,5 +1,6 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { crearRecetaAPI } from "../../helpers/queries";
 
 const FormularioReceta = () => {
 
@@ -11,8 +12,9 @@ const FormularioReceta = () => {
     setValue,
   } = useForm();
 
-  const onSubmit = ()=>{
-    console.log('desde onsubmit')
+  const onSubmit = (receta)=>{
+    console.log(receta)
+    crearRecetaAPI();
     reset();
   }
 

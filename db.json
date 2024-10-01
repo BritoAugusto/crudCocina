@@ -1,0 +1,12 @@
+{
+  "recetas": [
+    {
+      "id": "123",
+      "nombreReceta": "Humita",
+      "imagen": "https://media.istockphoto.com/id/1330113539/es/foto/locro-humita.jpg",
+      "categoria": "Dulce",
+      "ingredientes": "6 choclos, 1 cebolla, 200g de queso fresco, 50g de manteca, sal y pimienta, hojas de choclo",
+      "preparacion": "Rallar los choclos y reservar el grano y su jugo. Rehogar la cebolla picada en manteca hasta que esté transparente. Mezclar el choclo rallado con la cebolla y agregar sal, pimienta y queso desmenuzado. Envolver la mezcla en las hojas de choclo, formando paquetitos. Cocinar las humitas en agua hirviendo durante 40-45 minutos, ¡Listo!"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
-import { Button, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import ItemReceta from "../recetas/ItemReceta";
+import { Link } from "react-router-dom";
 
 
 const Administrador = () => {
@@ -7,9 +8,9 @@ const Administrador = () => {
       <section className="container my-3">
         <div className="d-flex justify-content-between align-items-center mt-5">
           <h1 className="display-4 ">Tabla de Recetas</h1>
-          <Button className="btn btn-primary">
+          <Link className="btn btn-primary" to={"/administrador/crear"}>
             <i className="bi bi-file-earmark-plus"></i>
-          </Button>
+          </Link>
         </div>
         <hr />
         <Table responsive striped bordered hover>
