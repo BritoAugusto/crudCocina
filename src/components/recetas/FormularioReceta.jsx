@@ -11,7 +11,7 @@ const FormularioReceta = ({titulo, creandoReceta}) => {
     handleSubmit,
     formState: { errors },
     reset,
-    setValue,
+    setValue
   } = useForm();
 
   const {id} = useParams();
@@ -27,6 +27,11 @@ const cargarReceta = async()=>{
   if (respuesta.status === 200) {
     const recetaEncontrada = await respuesta.json()
     console.log(recetaEncontrada)
+    setValue("nombreReceta", recetaEncontrada.nombreReceta)
+    setValue("imagen", recetaEncontrada.imagen)
+    setValue("categoria", recetaEncontrada.categoria)
+    setValue("ingredientes", recetaEncontrada.ingredientes)
+    setValue("preparacion", recetaEncontrada.preparacion)
   }else{
 
   }
