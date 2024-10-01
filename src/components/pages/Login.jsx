@@ -4,14 +4,15 @@ import { useForm } from "react-hook-form";
 import { Button, Card, Container, Form, Row } from "react-bootstrap";
 import { login } from "../../helpers/queries";
 
-const Login = () => {
+const Login = ({setUsuarioLogueado}) => {
 
     const {
       register,
       handleSubmit,
-      formState: { errors },
-      reset,
+      formState: { errors }
     } = useForm();
+
+    const navegacion = useNavigate()
 
   const onSubmit = (usuario)=>{
       if (login(usuario)) {
@@ -20,6 +21,8 @@ const Login = () => {
             text: `Bienvenido a crud cocina`,
             icon: "success",
           });
+          setUsuarioLogueado(usuario.email)
+          navegacion('/administrador')
       }else{
        Swal.fire({
          title: "Ocurrio un error",
@@ -82,7 +85,7 @@ const Login = () => {
                     </Form.Text>
                   </Form.Group>
                   <div className="justify-content-center d-flex">
-                    <Button type="submir" variant="success">
+                    <Button type="submit" variant="success">
                       Enviar
                     </Button>
                   </div>

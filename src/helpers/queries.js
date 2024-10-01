@@ -71,13 +71,13 @@ export const crearRecetaAPI = async (recetaNueva) => {
 
 const userAdmin = {
   email: "admin@admin.com",
-  password: "chinobrito",
+  password: "crudcocina",
 };
 
 export const login = (usuario) => {
   if (
-    usuario.emial === userAdmin.email &&
-    usuario.passsword === userAdmin.password
+    usuario.email === userAdmin.email &&
+    usuario.password === userAdmin.password
   ) {
     sessionStorage.setItem("userKey", JSON.stringify(userAdmin.email));
     return true;

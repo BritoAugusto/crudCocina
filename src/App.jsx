@@ -12,12 +12,17 @@ import DetalleReceta from "./components/pages/DetalleReceta.jsx";
 import FormularioReceta from "./components/recetas/FormularioReceta.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/pages/Login.jsx";
+import { useState } from "react";
 
 function App() {
+const usuario = JSON.parse(sessionStorage.getItem('userKey')) || "";
+const [usuarioLogueado,setUsuarioLogueado] = useState(usuario)
+
+
   return (
     <>
       <BrowserRouter>
-        <Menu></Menu>
+        <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
         <main className="sectionMain">
           <Routes>
             <Route exact path="/" element={<Inicio></Inicio>}></Route>
@@ -47,7 +52,7 @@ function App() {
                 ></FormularioReceta>
               }
             ></Route>
-            <Route exact path="/login" element={<Login></Login>}></Route>
+            <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
             <Route path="*" element={<Error404></Error404>}></Route>
           </Routes>
         </main>

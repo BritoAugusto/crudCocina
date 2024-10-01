@@ -1,10 +1,19 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import logo from "../../../src/assets/logo-cocina.jpg"
-import { Link, NavLink } from "react-router-dom";
+import logo from "../../../src/assets/logo-cocina.jpg";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
-function Menu() {
+function Menu({ setUsuarioLogueado, usuarioLogueado }) {
+  const navegacion = useNavigate()
+  
+  const logout = ()=>{
+    sessionStorage.removeItem('userKey')
+    setUsuarioLogueado('')
+    navegacion('/')
+  }
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -19,9 +28,21 @@ function Menu() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <NavLink end className="nav-link" to={"/"}>Inicio</NavLink>
-            <NavLink end className="nav-link" to={"/administrador"}>Administrador</NavLink>
-            <NavLink end className="nav-link" to={"/login"}>Login</NavLink>
+            <NavLink end className="nav-link" to={"/"}>
+              Inicio
+            </NavLink>
+            {usuarioLogueado !== '' ?(
+              <>
+                <NavLink end className="nav-link" to="/administrador">
+                  Administrador
+                </NavLink>
+                <Button className="nav-link" onClick={logout}>Logout</Button>
+              </>
+            ) : (
+              <NavLink end className="nav-link" to="/login">
+                Login
+              </NavLink>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
