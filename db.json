@@ -1,17 +1,6 @@
 {
   "recetas": [
     {
-      "id": "123",
-      "nombreReceta": "Humita",
-      "imagen": "https://media.istockphoto.com/id/1330113539/es/foto/locro-humita.jpg",
-      "categoria": "Dulce",
-      "ingredientes": "6 choclos, 1 cebolla, 200g de queso fresco, 50g de manteca, sal y pimienta, hojas de choclo",
-      "preparacion": "Rallar los choclos y reservar el grano y su jugo. Rehogar la cebolla picada en manteca hasta que esté transparente. Mezclar el choclo rallado con la cebolla y agregar sal, pimienta y queso desmenuzado. Envolver la mezcla en las hojas de choclo, formando paquetitos. Cocinar las humitas en agua hirviendo durante 40-45 minutos, ¡Listo!"
-    },
-    {
-      "id": "i5Judzg"
-    },
-    {
       "nombreReceta": "Tortilla de Papa",
       "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg",
       "categoria": "Salado",
@@ -20,68 +9,20 @@
       "id": "tIdMLY7"
     },
     {
-      "nombreReceta": "Tortilla de Papa",
-      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg",
-      "categoria": "Salado",
-      "ingredientes": "1kg papa",
-      "preparacion": "papitas fritas\n",
-      "id": "309Pgy7"
-    },
-    {
-      "nombreReceta": "Tortilla de Papa3",
-      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg",
-      "categoria": "Salado",
-      "ingredientes": "1kg papa",
-      "preparacion": "papitas fritas\n",
-      "id": "zqYknz_"
-    },
-    {
-      "nombreReceta": "Tortilla de Papa444",
-      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg",
-      "categoria": "Salado",
-      "ingredientes": "Achura",
-      "preparacion": "achura23",
-      "id": "gqAGjAw"
-    },
-    {
-      "nombreReceta": "Tortilla de Papa444",
-      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg",
-      "categoria": "Salado",
-      "ingredientes": "Achura",
-      "preparacion": "achura23",
-      "id": "bHMHcJm"
-    },
-    {
-      "nombreReceta": "holamundo",
-      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg",
-      "categoria": "Agridulce",
-      "ingredientes": "sdasdasfasf",
-      "preparacion": "afafqewqdqfa",
-      "id": "gSaj0Ao"
-    },
-    {
-      "nombreReceta": "Chorizo a la pomarola",
-      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg",
-      "categoria": "Agridulce",
-      "ingredientes": "sdasdasfasf",
-      "preparacion": "afafqewqdqfa",
-      "id": "kIESMGq"
-    },
-    {
-      "nombreReceta": "Tortilla de Papa",
-      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg",
-      "categoria": "Salado",
-      "ingredientes": "1kg de papas",
-      "preparacion": "fritar papas",
-      "id": "Jz3VzOa"
-    },
-    {
       "nombreReceta": "Empanadas de Carne y Pollo",
       "imagen": "https://images.pexels.com/photos/5881018/pexels-photo-5881018.jpeg",
       "categoria": "Salado",
       "ingredientes": "Carne Picada",
       "preparacion": "Carne picada",
       "id": "bVBhrZw"
+    },
+    {
+      "nombreReceta": "Sushi",
+      "imagen": "https://images.pexels.com/photos/357756/pexels-photo-357756.jpeg",
+      "categoria": "Agridulce",
+      "ingredientes": "Arroz, pescado crudo",
+      "preparacion": "Hervir el arroz",
+      "id": "wkNJjeJ"
     }
   ]
 }

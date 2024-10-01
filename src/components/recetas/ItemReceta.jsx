@@ -1,6 +1,44 @@
 import { Button } from "react-bootstrap";
+import Swal from "sweetalert2";
+import { borrarRecetaAPI, leerRecetas } from "../../helpers/queries.js";
+const ItemReceta = ({receta, setListaRecetas, fila}) => {
 
-const ItemReceta = ({receta, setListaReceta, fila}) => {
+  const borrarReceta = ()=>{
+Swal.fire({
+  title: "¿Estás seguro de borrar la receta?",
+  text: "No puedes revertir esta operacion!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Borrar!",
+  cancelButtonText: "Cancelar"
+}).then(async(result) => {
+  if (result.isConfirmed) {
+    const respuesta = await borrarRecetaAPI(receta.id)
+    console.log(respuesta)
+    if (respuesta.status === 200) {
+      Swal.fire({
+        title: "Receta Eliminada!",
+        text: `La receta ${receta.nombreReceta}.`,
+        icon: "success",
+      });
+      const recetasAPI = await leerRecetas();
+      if (recetasAPI.status === 200) {
+        const recetasActualizadas = await recetasAPI.json()
+        setListaRecetas(recetasActualizadas)
+      }
+    }else{
+       Swal.fire({
+         title: "Ocurrio un error",
+         text: `La receta ${receta.nombreReceta}, no pudo ser eliminada, intente de nuevo en unos minutos`,
+         icon: "error",
+       });
+    }
+  }
+});
+}
+
   return (
     <tr>
       <td className="text-center">{fila}</td>
@@ -17,7 +55,7 @@ const ItemReceta = ({receta, setListaReceta, fila}) => {
         <Button className="me-md-2 me-lg-2">
           <i className="bi bi-pencil-square"></i>
         </Button>
-        <Button variant="danger">
+        <Button variant="danger" onClick={borrarReceta}>
           <i className="bi bi-trash"></i>
         </Button>
       </td>
