@@ -21,7 +21,7 @@ function Menu() {
           <Nav className="ms-auto">
             <NavLink end className="nav-link" to={"/"}>Inicio</NavLink>
             <NavLink end className="nav-link" to={"/administrador"}>Administrador</NavLink>
-            <NavLink end className="nav-link" to={"/"}>Login</NavLink>
+            <NavLink end className="nav-link" to={"/login"}>Login</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

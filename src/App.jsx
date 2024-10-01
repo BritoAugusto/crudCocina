@@ -11,6 +11,7 @@ import Error404 from "./components/pages/Error404.jsx";
 import DetalleReceta from "./components/pages/DetalleReceta.jsx";
 import FormularioReceta from "./components/recetas/FormularioReceta.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./components/pages/Login.jsx";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
                 ></FormularioReceta>
               }
             ></Route>
+            <Route exact path="/login" element={<Login></Login>}></Route>
             <Route path="*" element={<Error404></Error404>}></Route>
           </Routes>
           {/* <Row> */}
