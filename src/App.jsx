@@ -28,12 +28,22 @@ function App() {
             <Route
               exact
               path="/administrador/crear"
-              element={<FormularioReceta></FormularioReceta>}
+              element={
+                <FormularioReceta
+                  titulo={"Añadir Receta"}
+                  creandoReceta={true}
+                ></FormularioReceta>
+              }
             ></Route>
             <Route
               exact
               path="/administrador/editar"
-              element={<FormularioReceta></FormularioReceta>}
+              element={
+                <FormularioReceta
+                  titulo={"Editar Receta"}
+                  creandoReceta={false}
+                ></FormularioReceta>
+              }
             ></Route>
             <Route path="*" element={<Error404></Error404>}></Route>
           </Routes>

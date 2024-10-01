@@ -2,7 +2,7 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearRecetaAPI } from "../../helpers/queries";
 import Swal from "sweetalert2";
-const FormularioReceta = () => {
+const FormularioReceta = ({titulo, creandoReceta}) => {
 
   const {
     register,
@@ -13,26 +13,31 @@ const FormularioReceta = () => {
   } = useForm();
 
   const onSubmit =  async(receta)=>{
-    const respuesta = await crearRecetaAPI(receta);
-    if (respuesta.status === 201) {
-      reset();
-      Swal.fire({
-        title: "La receta fue creada correctamente",
-        text: `La receta ${receta.nombreReceta} ,fue creada correctamente`,
-        icon: "success",
-      });
+    if (creandoReceta) {
+      
+      const respuesta = await crearRecetaAPI(receta);
+      if (respuesta.status === 201) {
+        reset();
+        Swal.fire({
+          title: "La receta fue creada correctamente",
+          text: `La receta ${receta.nombreReceta} ,fue creada correctamente`,
+          icon: "success",
+        });
+      }else{
+        Swal.fire({
+          title: "Ocurrio un error",
+          text: `No se pudo crear la receta ${receta.nombreReceta}, intente esta operacion en unos minutos`,
+          icon: "error",
+        });
+      }
     }else{
-      Swal.fire({
-        title: "Ocurrio un error",
-        text: `No se pudo crear la receta ${receta.nombreReceta}, intente esta operacion en unos minutos`,
-        icon: "error",
-      });
+      console.log('editando receta')
     }
-  }
+    }
 
   return (
     <section className="container mainSection">
-      <h1>Añadir Receta</h1>
+      <h1>{titulo}</h1>
       <Form className="mb-3" onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="formNombreReceta"></Form.Group>
         <Form.Label>Nombre de Receta*</Form.Label>
