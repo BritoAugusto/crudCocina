@@ -2,6 +2,8 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearRecetaAPI } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 const FormularioReceta = ({titulo, creandoReceta}) => {
 
   const {
@@ -11,6 +13,18 @@ const FormularioReceta = ({titulo, creandoReceta}) => {
     reset,
     setValue,
   } = useForm();
+
+  const {id} = useParams();
+
+useEffect(()=>{
+if (!creandoReceta) {
+  cargarReceta()
+}
+},[])  
+
+const cargarReceta = ()=>{
+  
+}
 
   const onSubmit =  async(receta)=>{
     if (creandoReceta) {

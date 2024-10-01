@@ -25,6 +25,13 @@ try {
 }
 }
 
+//GET PARA EDITAR
+export const buscarReceta = async(id)=>{
+const respuesta = await fetch()
+}
+
+
+
 
 //POST
 export const crearRecetaAPI = async(recetaNueva)=>{

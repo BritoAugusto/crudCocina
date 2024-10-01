@@ -38,7 +38,7 @@ function App() {
             ></Route>
             <Route
               exact
-              path="/administrador/editar"
+              path="/administrador/editar/:id"
               element={
                 <FormularioReceta
                   titulo={"Editar Receta"}

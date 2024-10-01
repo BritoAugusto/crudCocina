@@ -29,7 +29,7 @@ const Login = () => {
                     <Form.Label>Email</Form.Label>
                     <Form.Control
                       type="email"
-                      placeholder="Ejemplo@gmail.com"
+                      placeholder="Ej: juanperez@gmail.com"
                       {...register("email", {
                         required: "El mail es un dato obligatorio",
                         minLength: {
