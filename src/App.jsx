@@ -21,6 +21,7 @@ function App() {
         <main className="sectionMain">
           <Routes>
             <Route exact path="/" element={<Inicio></Inicio>}></Route>
+            <Route exact path="/detalleReceta/:id" element={<DetalleReceta></DetalleReceta>}></Route>
             <Route
               exact
               path="/administrador"

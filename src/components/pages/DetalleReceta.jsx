@@ -1,12 +1,28 @@
-import { Card, Col } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Card, Col, Row } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import { buscarRecetaAPI } from "../../helpers/queries.js";
 
 const DetalleReceta = () => {
+
+const {id} = useParams();
+const [receta, setReceta] = useState({})
+
+useEffect(()=>{
+  const mostrarReceta = async ()=>{
+    const respuesta = await buscarRecetaAPI(id);
+    const recetaObtenida = await respuesta.json();
+    setReceta(recetaObtenida)
+  };
+  mostrarReceta();
+},[]);
+
   return (
-    <>
+    <Row className="container m-auto my-5">
       <Col md={6} lg={6} className="mb-3">
         <img
-          src="https://media.istockphoto.com/id/1446212074/es/foto/pisto-en-capas-en-una-fuente-para-hornear-rodajas-de-calabac%C3%ADn-pimiento-rojo-chile-calabaza.jpg?s=1024x1024&w=is&k=20&c=AWVT9Ct6uJ1PQc5QbelB2cw3rRF7yHLtBQOs6GpsnK4="
-          alt="foto receta"
+          src={receta.imagen}
+          alt={receta.nombreReceta}
           className="card-img-top-nueva h-100"
         />
       </Col>
@@ -14,34 +30,20 @@ const DetalleReceta = () => {
       <Col md={6} lg={6} className="mb-3">
         <Card className="h-100 text-center">
           <Card.Body>
-            <Card.Title className="primary-font">Ratatoille</Card.Title>
-            <Card.Text>
-              <p className="fw-bold">Salado</p>
-              <p className="fw-bold ">Ingredientes</p>
-              <p className="text-danger-emphasis">
-                1 berenjena, 1 calabacín, 1 pimiento rojo, 1 pimiento amarillo,
-                1 cebolla, 2 dientes de ajo, 4 tomates maduros, aceite de oliva,
-                sal y pimienta al gusto, hierbas provenzales (tomillo, romero,
-                orégano)
-              </p>
-              <p className="fw-bold">Preparación</p>
-              <p className="text-warning-emphasis">
-                Precalienta el horno a 180°C (350°F). Corta la berenjena,
-                calabacín, pimientos y tomates en rodajas finas. Pica la cebolla
-                y los ajos. Saltea la cebolla y el ajo en una sartén con un poco
-                de aceite de oliva hasta que estén dorados. Cubre la base de una
-                fuente para horno con la mezcla de cebolla y ajo. Coloca las
-                rodajas de verduras (berenjena, calabacín, pimientos, y tomates)
-                alternándolas en la fuente, formando un patrón circular o de
-                capas. Rocía con aceite de oliva, agrega sal, pimienta y las
-                hierbas provenzales. Hornea durante 45-50 minutos, hasta que las
-                verduras estén tiernas.
-              </p>
+            <Card.Title className="primary-font">{receta.nombreReceta}</Card.Title>
+            <p className="text-secondary-emphasis">{receta.categoria}</p>
+            <h5>Ingredientes</h5>
+            <Card.Text className="text-warning-emphasis">
+              {receta.ingredientes}
+               </Card.Text>
+              <h5>Preparación</h5>
+              <Card.Text className="text-info-emphasis">
+              {receta.preparacion}
             </Card.Text>
           </Card.Body>
         </Card>
       </Col>
-    </>
+    </Row>
   );
 };
 

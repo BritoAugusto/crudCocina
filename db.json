@@ -2,17 +2,17 @@
   "recetas": [
     {
       "nombreReceta": "Tortilla de Papa",
-      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg",
+      "imagen": "https://images.pexels.com/photos/4765652/pexels-photo-4765652.jpeg",
       "categoria": "Salado",
-      "ingredientes": "1kg de papas",
-      "preparacion": "Fritar las papas",
+      "ingredientes": "1kg de papas, 4 huevos, sal y pimienta, orégano, 1 cebolla, 1 ajo, 1 pimiento.",
+      "preparacion": "Pelar las papas y cortarlas en bastoncitos, luego fritarlas. Saltear el pimiento, la cebolla, el ajo y añadir sal. Luego mezclar el salteado con las papas. En una sartén, colocar la mezcla y darle forma de tortilla. Batir dos huevos con orégano y sal y luego echarle alrededor de la tortilla. Espera uno o dos minutos que el huevo se frite. Dar vuelta la tortilla en la sartén y repetir el mismo procedimiento con otros dos huevos. Esperar uno o dos minutos y ¡Listo, a comer!",
       "id": "tIdMLY7"
     },
     {
-      "nombreReceta": "Empanadas de Carne y Pollo",
+      "nombreReceta": "Empanadas de Carne",
       "imagen": "https://images.pexels.com/photos/5881018/pexels-photo-5881018.jpeg",
       "categoria": "Salado",
-      "ingredientes": "Carne Picada",
+      "ingredientes": "matambre",
       "preparacion": "Carne picada",
       "id": "bVBhrZw"
     },

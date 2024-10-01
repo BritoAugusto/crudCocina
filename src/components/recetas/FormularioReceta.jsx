@@ -1,45 +1,52 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { buscarRecetaAPI, crearRecetaAPI } from "../../helpers/queries";
+import {
+  buscarRecetaAPI,
+  crearRecetaAPI,
+  editarRecetaAPI,
+} from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-const FormularioReceta = ({titulo, creandoReceta}) => {
-
+import { useNavigate, useParams } from "react-router-dom";
+const FormularioReceta = ({ titulo, creandoReceta }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-    setValue
+    setValue,
   } = useForm();
 
-  const {id} = useParams();
+  const { id } = useParams();
 
-useEffect(()=>{
-if (!creandoReceta) {
-  cargarReceta()
-}
-},[])  
+  const navegacion = useNavigate()
+  useEffect(() => {
+    if (!creandoReceta) {
+      cargarReceta();
+    }
+  }, []);
 
-const cargarReceta = async()=>{
-  const respuesta = await buscarRecetaAPI(id)
-  if (respuesta.status === 200) {
-    const recetaEncontrada = await respuesta.json()
-    console.log(recetaEncontrada)
-    setValue("nombreReceta", recetaEncontrada.nombreReceta)
-    setValue("imagen", recetaEncontrada.imagen)
-    setValue("categoria", recetaEncontrada.categoria)
-    setValue("ingredientes", recetaEncontrada.ingredientes)
-    setValue("preparacion", recetaEncontrada.preparacion)
-  }else{
+  const cargarReceta = async () => {
+    const respuesta = await buscarRecetaAPI(id);
+    if (respuesta.status === 200) {
+      const recetaEncontrada = await respuesta.json();
+      console.log(recetaEncontrada);
+      setValue("nombreReceta", recetaEncontrada.nombreReceta);
+      setValue("imagen", recetaEncontrada.imagen);
+      setValue("categoria", recetaEncontrada.categoria);
+      setValue("ingredientes", recetaEncontrada.ingredientes);
+      setValue("preparacion", recetaEncontrada.preparacion);
+    } else {
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: `No se pudo editar la receta, intente nuevamente en unos minutos.`,
+        icon: "error",
+      });
+    }
+  };
 
-  }
-}
-
-  const onSubmit =  async(receta)=>{
+  const onSubmit = async (receta) => {
     if (creandoReceta) {
-      
       const respuesta = await crearRecetaAPI(receta);
       if (respuesta.status === 201) {
         reset();
@@ -48,17 +55,32 @@ const cargarReceta = async()=>{
           text: `La receta ${receta.nombreReceta} ,fue creada correctamente`,
           icon: "success",
         });
-      }else{
+      } else {
         Swal.fire({
           title: "Ocurrio un error",
           text: `No se pudo crear la receta ${receta.nombreReceta}, intente esta operacion en unos minutos`,
           icon: "error",
         });
       }
-    }else{
-      console.log('editando receta')
+    } else {
+      const respuesta = await editarRecetaAPI(receta, id);
+      if (respuesta.status === 200) {
+
+        Swal.fire({
+          title: "La receta fue editada correctamente",
+          text: `La receta ${receta.nombreReceta} ,fue editada correctamente`,
+          icon: "success",
+        });
+        navegacion("/administrador")
+      }else{
+        Swal.fire({
+          title: "Ocurrio un error",
+          text: `No se pudo editar la receta ${receta.nombreReceta}, intente esta operacion en unos minutos`,
+          icon: "error",
+        });
+      }
     }
-    }
+  };
 
   return (
     <section className="container mainSection">
@@ -143,7 +165,7 @@ const cargarReceta = async()=>{
               message: "Los preparacion deben contener al menos 5 caracteres",
             },
             maxLength: {
-              value:500,
+              value: 500,
               message:
                 "Los preparacion deben contener como máximo 500 caracteres",
             },
