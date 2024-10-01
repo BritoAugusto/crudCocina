@@ -15,44 +15,30 @@ import Login from "./components/pages/Login.jsx";
 import { useState } from "react";
 
 function App() {
-const usuario = JSON.parse(sessionStorage.getItem('userKey')) || "";
-const [usuarioLogueado,setUsuarioLogueado] = useState(usuario)
-
+  const usuario = JSON.parse(sessionStorage.getItem("userKey")) || "";
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
 
   return (
     <>
       <BrowserRouter>
-        <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
+        <Menu
+          usuarioLogueado={usuarioLogueado}
+          setUsuarioLogueado={setUsuarioLogueado}
+        ></Menu>
         <main className="sectionMain">
           <Routes>
             <Route exact path="/" element={<Inicio></Inicio>}></Route>
-            <Route exact path="/detalleReceta/:id" element={<DetalleReceta></DetalleReceta>}></Route>
             <Route
               exact
-              path="/administrador"
-              element={<Administrador></Administrador>}
+              path="/detalleReceta/:id"
+              element={<DetalleReceta></DetalleReceta>}
             ></Route>
+
             <Route
               exact
-              path="/administrador/crear"
-              element={
-                <FormularioReceta
-                  titulo={"Añadir Receta"}
-                  creandoReceta={true}
-                ></FormularioReceta>
-              }
+              path="/login"
+              element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}
             ></Route>
-            <Route
-              exact
-              path="/administrador/editar/:id"
-              element={
-                <FormularioReceta
-                  titulo={"Editar Receta"}
-                  creandoReceta={false}
-                ></FormularioReceta>
-              }
-            ></Route>
-            <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
             <Route path="*" element={<Error404></Error404>}></Route>
           </Routes>
         </main>
