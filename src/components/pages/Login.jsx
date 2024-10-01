@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { Button, Card, Container, Form, Row } from "react-bootstrap";
-
+import { login } from "../../helpers/queries";
 
 const Login = () => {
 
@@ -13,7 +13,21 @@ const Login = () => {
       reset,
     } = useForm();
 
-    const navegacion = useNavigate();
+  const onSubmit = (usuario)=>{
+      if (login(usuario)) {
+          Swal.fire({
+            title: "Usuario Logueado",
+            text: `Bienvenido a crud cocina`,
+            icon: "success",
+          });
+      }else{
+       Swal.fire({
+         title: "Ocurrio un error",
+         text: `Email o Password incorrecto`,
+         icon: "error",
+       });
+      }
+  }
 
     return (
       <section className="sectionMain align-content-center">
@@ -24,7 +38,7 @@ const Login = () => {
                 <div className="justify-content-center d-flex">
                   <Card.Title>Login</Card.Title>
                 </div>
-                <Form>
+                <Form onSubmit={handleSubmit(onSubmit)}>
                   <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Label>Email</Form.Label>
                     <Form.Control

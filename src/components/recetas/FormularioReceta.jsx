@@ -103,7 +103,7 @@ const FormularioReceta = ({ titulo, creandoReceta }) => {
             },
           })}
         ></Form.Control>
-        <Form.Text>{errors.nombreReceta?.message}</Form.Text>
+        <Form.Text className="text-danger">{errors.nombreReceta?.message}</Form.Text>
         <Form.Group className="mb-3" controlId="formImagen"></Form.Group>
         <Form.Label>Url Imagen*</Form.Label>
         <Form.Control
@@ -118,7 +118,7 @@ const FormularioReceta = ({ titulo, creandoReceta }) => {
             },
           })}
         ></Form.Control>
-        <Form.Text>{errors.imagen?.message}</Form.Text>
+        <Form.Text className="text-danger">{errors.imagen?.message}</Form.Text>
         <Form.Group className="mb-3" controlId="formCategoria"></Form.Group>
         <Form.Label>Categoría*</Form.Label>
         <Form.Select
@@ -131,7 +131,7 @@ const FormularioReceta = ({ titulo, creandoReceta }) => {
           <option value="Salado">Salado</option>
           <option value="Agridulce">Agridulce</option>
         </Form.Select>
-        <Form.Text>{errors.categoria?.message}</Form.Text>
+        <Form.Text className="text-danger">{errors.categoria?.message}</Form.Text>
         <Form.Group className="mb-3" controlId="formIngredientes"></Form.Group>
         <Form.Label>Ingredientes*</Form.Label>
         <Form.Control
@@ -151,7 +151,7 @@ const FormularioReceta = ({ titulo, creandoReceta }) => {
             },
           })}
         ></Form.Control>
-        <Form.Text>{errors.ingredientes?.message}</Form.Text>
+        <Form.Text className="text-danger">{errors.ingredientes?.message}</Form.Text>
         <Form.Group className="mb-3" controlId="formPreparacion"></Form.Group>
         <Form.Label>Preparación*</Form.Label>
         <Form.Control
@@ -171,7 +171,7 @@ const FormularioReceta = ({ titulo, creandoReceta }) => {
             },
           })}
         ></Form.Control>
-        <Form.Text>{errors.preparacion?.message}</Form.Text>
+        <Form.Text className="text-danger">{errors.preparacion?.message}</Form.Text>
         <Form.Group>
           <Button type="submit" variant="primary">
             Guardar

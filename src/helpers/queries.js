@@ -68,3 +68,20 @@ export const crearRecetaAPI = async (recetaNueva) => {
     return false;
   }
 };
+
+const userAdmin = {
+  email: "admin@admin.com",
+  password: "chinobrito",
+};
+
+export const login = (usuario) => {
+  if (
+    usuario.emial === userAdmin.email &&
+    usuario.passsword === userAdmin.password
+  ) {
+    sessionStorage.setItem("userKey", JSON.stringify(userAdmin.email));
+    return true;
+  } else {
+    return false;
+  }
+};
