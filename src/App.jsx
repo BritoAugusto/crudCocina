@@ -50,13 +50,6 @@ function App() {
             <Route exact path="/login" element={<Login></Login>}></Route>
             <Route path="*" element={<Error404></Error404>}></Route>
           </Routes>
-          {/* <Row> */}
-          {/* <CardReceta></CardReceta>
-          <CardReceta></CardReceta>
-          <CardReceta></CardReceta>
-          <CardReceta></CardReceta> */}
-          {/* <DetalleReceta></DetalleReceta> */}
-          {/* </Row>  */}
         </main>
         <Footer></Footer>
       </BrowserRouter>
