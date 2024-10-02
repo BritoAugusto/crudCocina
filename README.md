@@ -1,10 +1,46 @@
-# React + Vite
+# 🍽️ CRUD de Recetas de Cocina
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenido al proyecto **Rolling Recetas**, donde podrás gestionar recetas de manera sencilla y efectiva. Esta aplicación te permite loguearte como administrador y realizar las siguientes acciones:
 
-Currently, two official plugins are available:
+- **Agregar recetas** 🍲
+- **Editar recetas** ✏️
+- **Eliminar recetas** ❌
+- **Visualizar recetas** 📜
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Despliegue
+
+Este proyecto está desplegado en **Netlify** y es accesible a través del siguiente enlace:
+
+[Visita el proyecto en Netlify](TU_ENLACE_DE_NETLIFY)
+
+## 🛠️ Tecnologías Utilizadas
+
+- **React**: Para la construcción de la interfaz de usuario.
+- **Bootstrap**: Para el diseño y estilo de la aplicación.
+- **JSON Server**: Utilizado como una API local para gestionar datos.
+
+## 🚀 Instrucciones para Ejecutar el Proyecto
+
+
+### Clonación del Repositorio
+
+
+Para clonar este repositorio en tu máquina local, usa el siguiente comando:
+
+```bash
+git clone https://github.com/tu_usuario/nombre_del_repositorio.git
+
 - 
-<!-- - json-server --watch db.json -->
+```
+### Instalar Dependencias
+**npm install**
+### Iniciar json-server
+
+**json-server --watch db.json --port 3000**
+
+### Iniciar React
+**npm run dev**
+
+![Autor](https://img.icons8.com/ios-filled/50/000000/user-male.png)
+
+ **Autor: Augusto Brito**
