@@ -11,7 +11,7 @@ Bienvenido al proyecto **Rolling Recetas**, donde podrás gestionar recetas de m
 
 Este proyecto está desplegado en **Netlify** y es accesible a través del siguiente enlace:
 
-[Visita el proyecto en Netlify](TU_ENLACE_DE_NETLIFY)
+[Visita el proyecto en Netlify](https://rollingrecetas-britoaugusto.netlify.app/)
 
 ## 🛠️ Tecnologías Utilizadas
 
