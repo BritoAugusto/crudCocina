@@ -25,18 +25,23 @@ function Menu({ setUsuarioLogueado, usuarioLogueado }) {
             width={85}
           />
         </Navbar.Brand>
+        <NavLink end className="nav-link fs-2 text-warning-emphasis" to="/">
+          Rolling Recetas
+        </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <NavLink end className="nav-link" to={"/"}>
               Inicio
             </NavLink>
-            {usuarioLogueado !== '' ?(
+            {usuarioLogueado !== "" ? (
               <>
                 <NavLink end className="nav-link" to="/administrador">
                   Administrador
                 </NavLink>
-                <Button className="nav-link" onClick={logout}>Logout</Button>
+                <Button className="nav-link" onClick={logout}>
+                  Logout
+                </Button>
               </>
             ) : (
               <NavLink end className="nav-link" to="/login">
