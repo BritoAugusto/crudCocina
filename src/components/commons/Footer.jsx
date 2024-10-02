@@ -1,8 +1,8 @@
 
 const Footer = () => {
     return (
-        <footer className="text-center  bg-secondary">
-            <p>Derechos Reservados Augusto Brito</p>
+        <footer className="text-center text-info-emphasis bg-crud">
+            <p>Derechos Reservados &copy; Rolling Recetas</p>
         </footer>
     );
 };

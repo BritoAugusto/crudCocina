@@ -28,7 +28,7 @@ const Administrador = () => {
   return (
     <section className="container my-3">
       <div className="d-flex justify-content-between align-items-center mt-5">
-        <h1 className="display-4 ">Tabla de Recetas</h1>
+        <h1 className="display-4 bg-secondary opacity-75 text-white fw-bold">Tabla de Recetas</h1>
         <Link className="btn btn-primary" to={"/administrador/crear"}>
           <i className="bi bi-file-earmark-plus"></i>
         </Link>

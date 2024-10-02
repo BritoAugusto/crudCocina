@@ -15,7 +15,7 @@ function Menu({ setUsuarioLogueado, usuarioLogueado }) {
   }
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-crud">
       <Container>
         <Navbar.Brand as={Link} to={"/"}>
           <img
