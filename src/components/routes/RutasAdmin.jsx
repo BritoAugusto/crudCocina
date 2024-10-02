@@ -7,12 +7,12 @@ const RutasAdmin = () => {
       <Routes>
         <Route
           exact
-          path="/administrador"
+          path="/"
           element={<Administrador></Administrador>}
         ></Route>
         <Route
           exact
-          path="/administrador/crear"
+          path="/crear"
           element={
             <FormularioReceta
               titulo={"Añadir Receta"}
@@ -22,7 +22,7 @@ const RutasAdmin = () => {
         ></Route>
         <Route
           exact
-          path="/administrador/editar/:id"
+          path="/editar/:id"
           element={
             <FormularioReceta
               titulo={"Editar Receta"}
