@@ -16,7 +16,7 @@ Swal.fire({
   cancelButtonText: "Cancelar"
 }).then(async(result) => {
   if (result.isConfirmed) {
-    const respuesta = await borrarRecetaAPI(receta.id)
+    const respuesta = await borrarRecetaAPI(receta._id)
     console.log(respuesta)
     if (respuesta.status === 200) {
       Swal.fire({
@@ -53,7 +53,7 @@ Swal.fire({
       </td>
       <td>{receta.categoria}</td>
       <td className="text-center">
-        <Link className="btn btn-warning me-md-2 me-lg-2" to={`/administrador/editar/${receta.id}`}>
+        <Link className="btn btn-warning me-md-2 me-lg-2" to={`/administrador/editar/${receta._id}`}>
           <i className="bi bi-pencil-square"></i>
         </Link>
         <Button variant="danger" onClick={borrarReceta}>

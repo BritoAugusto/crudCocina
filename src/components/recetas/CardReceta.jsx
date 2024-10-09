@@ -18,7 +18,7 @@ const CardReceta = ({receta}) => {
           <Card.Text className="text-info-emphasis">
            {receta.ingredientes}
           </Card.Text>
-          <Link className="btn btn-primary" to={`/detalleReceta/${receta.id}`}>Ver más...</Link>
+          <Link className="btn btn-primary" to={`/detalleReceta/${receta._id}`}>Ver más...</Link>
         </Card.Body>
       </Card>
     </Col>

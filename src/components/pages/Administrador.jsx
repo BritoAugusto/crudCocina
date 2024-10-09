@@ -47,7 +47,7 @@ const Administrador = () => {
         <tbody>
           {listaRecetas.map((receta, posicion) => 
             <ItemReceta
-              key={receta.id}
+              key={receta._id}
               receta={receta}
               setListaRecetas={setListaRecetas}
               fila={posicion + 1}
