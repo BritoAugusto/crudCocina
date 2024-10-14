@@ -17,8 +17,7 @@ Este proyecto está desplegado en **Netlify** y es accesible a través del sigui
 
 - **React**: Para la construcción de la interfaz de usuario.
 - **Bootstrap**: Para el diseño y estilo de la aplicación.
-- **JSON Server**: Utilizado como una API local para gestionar datos.
-
+- 
 ## 🚀 Instrucciones para Ejecutar el Proyecto
 
 
@@ -34,9 +33,6 @@ git clone https://github.com/tu_usuario/nombre_del_repositorio.git
 ```
 ### Instalar Dependencias
 **npm install**
-### Iniciar json-server
-
-**json-server --watch db.json --port 3000**
 
 ### Iniciar React
 **npm run dev**
