@@ -11,7 +11,7 @@ Bienvenido al proyecto **Rolling Recetas**, donde podrás gestionar recetas de m
 
 Este proyecto está desplegado en **Netlify** y es accesible a través del siguiente enlace:
 
-[Visita el proyecto en Netlify](https://rollingrecetas-britoaugusto.netlify.app/)
+[Visita el proyecto en Netlify](https://crudcocina-c102i.netlify.app/)
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -27,7 +27,7 @@ Este proyecto está desplegado en **Netlify** y es accesible a través del sigui
 Para clonar este repositorio en tu máquina local, usa el siguiente comando:
 
 ```bash
-git clone https://github.com/tu_usuario/nombre_del_repositorio.git
+git clone https://github.com/BritoAugusto/crudCocina.git
 
 - 
 ```
